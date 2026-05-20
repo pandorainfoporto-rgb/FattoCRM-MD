@@ -25,7 +25,7 @@ export function Hero({
   const headlineRendered = highlightWord
     ? headline.split(highlightWord).flatMap((part, i, arr) =>
         i < arr.length - 1
-          ? [part, <span key={i} className="text-md-gold">{highlightWord}</span>]
+          ? [part, <span key={i} className="text-md-cyan">{highlightWord}</span>]
           : [part],
       )
     : headline;
@@ -45,7 +45,7 @@ export function Hero({
       <div className="relative mx-auto grid max-w-7xl gap-12 px-6 lg:grid-cols-2 lg:gap-16 lg:px-8 lg:items-center">
         <div>
           {eyebrow && (
-            <p className="mb-6 font-mono text-xs uppercase tracking-[0.2em] text-md-gold">
+            <p className="mb-6 font-mono text-xs uppercase tracking-[0.2em] text-md-cyan">
               {eyebrow}
             </p>
           )}
@@ -67,15 +67,15 @@ export function Hero({
 
           <div className="mt-12 grid gap-6 text-sm text-md-paper/70 sm:grid-cols-3">
             <div className="flex items-start gap-2">
-              <Shield className="mt-0.5 h-5 w-5 flex-shrink-0 text-md-gold" strokeWidth={1.5} />
+              <Shield className="mt-0.5 h-5 w-5 flex-shrink-0 text-md-cyan" strokeWidth={1.5} />
               <span>Advogado responsável<br/>OAB ativo</span>
             </div>
             <div className="flex items-start gap-2">
-              <Clock className="mt-0.5 h-5 w-5 flex-shrink-0 text-md-gold" strokeWidth={1.5} />
+              <Clock className="mt-0.5 h-5 w-5 flex-shrink-0 text-md-cyan" strokeWidth={1.5} />
               <span>Análise em<br/>até 48h úteis</span>
             </div>
             <div className="flex items-start gap-2">
-              <FileCheck className="mt-0.5 h-5 w-5 flex-shrink-0 text-md-gold" strokeWidth={1.5} />
+              <FileCheck className="mt-0.5 h-5 w-5 flex-shrink-0 text-md-cyan" strokeWidth={1.5} />
               <span>Compliance<br/>LGPD + OAB</span>
             </div>
           </div>
@@ -90,7 +90,7 @@ export function Hero({
             className="shadow-md-card-lg"
           />
           {/* selo dourado flutuante */}
-          <div className="absolute -bottom-4 -left-4 max-w-[200px] rounded-md bg-md-gold p-4 text-md-navy-deep shadow-md-gold lg:-left-8">
+          <div className="absolute -bottom-4 -left-4 max-w-[200px] rounded-md bg-md-cyan p-4 text-md-navy-deep shadow-md-cyan lg:-left-8">
             <p className="font-display text-xs uppercase tracking-wider">
               Análise jurídica
             </p>

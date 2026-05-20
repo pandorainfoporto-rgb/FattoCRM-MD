@@ -42,7 +42,7 @@ export default function BacenPage() {
         >
           <div className="grid gap-8 lg:grid-cols-2">
             <div className="rounded-lg bg-white p-8 shadow-md-card">
-              <Landmark className="h-10 w-10 text-md-gold" strokeWidth={1.5} />
+              <Landmark className="h-10 w-10 text-md-cyan" strokeWidth={1.5} />
               <h3 className="mt-6 font-display text-xl font-semibold text-md-navy-deep">
                 O que é o SCR
               </h3>
@@ -55,7 +55,7 @@ export default function BacenPage() {
             </div>
 
             <div className="rounded-lg bg-white p-8 shadow-md-card">
-              <FileSearch className="h-10 w-10 text-md-gold" strokeWidth={1.5} />
+              <FileSearch className="h-10 w-10 text-md-cyan" strokeWidth={1.5} />
               <h3 className="mt-6 font-display text-xl font-semibold text-md-navy-deep">
                 O que é o Registrato
               </h3>
@@ -108,7 +108,7 @@ export default function BacenPage() {
               },
             ].map(({ icon: Icon, title, text }, i) => (
               <div key={i} className="rounded-lg border border-md-gray-200 bg-md-paper p-6">
-                <Icon className="h-7 w-7 text-md-gold" strokeWidth={1.5} />
+                <Icon className="h-7 w-7 text-md-cyan" strokeWidth={1.5} />
                 <h3 className="mt-4 font-display text-lg font-semibold text-md-navy-deep">
                   {title}
                 </h3>
@@ -208,7 +208,7 @@ export default function BacenPage() {
 
         <Section variant="navy" className="text-center">
           <div className="mx-auto max-w-2xl">
-            <Building2 className="mx-auto h-12 w-12 text-md-gold" strokeWidth={1.5} />
+            <Building2 className="mx-auto h-12 w-12 text-md-cyan" strokeWidth={1.5} />
             <h2 className="mt-6 font-display text-h1 font-semibold text-md-paper">
               Vamos ler seu Registrato juntos?
             </h2>

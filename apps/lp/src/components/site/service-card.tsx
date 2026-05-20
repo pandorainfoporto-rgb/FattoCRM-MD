@@ -19,7 +19,7 @@ export function ServiceCard({
   return (
     <Link href={href} className="card-service block">
       <div className="absolute right-6 top-6 opacity-10 transition group-hover:opacity-20">
-        <Icon className="h-20 w-20 text-md-gold" strokeWidth={1} />
+        <Icon className="h-20 w-20 text-md-cyan" strokeWidth={1} />
       </div>
 
       <div className="relative">
@@ -35,7 +35,7 @@ export function ServiceCard({
           {description}
         </p>
 
-        <div className="mt-6 flex items-center gap-2 text-sm font-medium text-md-gold transition group-hover:gap-3">
+        <div className="mt-6 flex items-center gap-2 text-sm font-medium text-md-cyan transition group-hover:gap-3">
           {cta}
           <ArrowRight className="h-4 w-4" strokeWidth={1.5} />
         </div>

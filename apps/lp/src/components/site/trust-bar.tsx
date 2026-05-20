@@ -13,7 +13,7 @@ export function TrustBar() {
       <div className="mx-auto grid max-w-7xl gap-8 px-6 py-10 sm:grid-cols-2 lg:grid-cols-4 lg:px-8">
         {items.map(({ icon: Icon, label, sub }, i) => (
           <div key={i} className="flex items-center gap-4">
-            <Icon className="h-8 w-8 flex-shrink-0 text-md-gold" strokeWidth={1.5} />
+            <Icon className="h-8 w-8 flex-shrink-0 text-md-cyan" strokeWidth={1.5} />
             <div>
               <p className="font-display text-sm font-medium text-md-navy-deep">
                 {label}

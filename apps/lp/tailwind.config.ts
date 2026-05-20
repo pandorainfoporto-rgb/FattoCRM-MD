@@ -1,19 +1,19 @@
 import type { Config } from "tailwindcss";
 
-// Paleta MD — ver Brand/BRANDBOOK.md §3.
-// Cores fixas no LP (sem dark toggle — hero é navy, body é paper, cada seção tem
-// sua identidade rígida pra preservar o storytelling).
+// Paleta MD — alinhada ao logo oficial (Brand/logos/logo-md-original.jpg).
+// Navy-azul-marinho profundo + ciano vibrante, sem dourado.
+// Ver Brand/BRANDBOOK.md §3.
 const config: Config = {
   content: ["./src/**/*.{ts,tsx}"],
   theme: {
     extend: {
       colors: {
         md: {
-          "navy-deep": "#0B1E3B",
-          navy: "#1E3A5F",
-          gold: "#C5A572",
-          "gold-soft": "#D9C19A",
-          paper: "#F8F5EF",
+          "navy-deep": "#1C2A6E",
+          navy: "#2C3E8E",
+          cyan: "#00A0E3",
+          "cyan-soft": "#5EBCEC",
+          paper: "#F4F6FA",
           ink: "#0F172A",
           success: "#10B981",
           warning: "#F59E0B",
@@ -38,9 +38,9 @@ const config: Config = {
         "body-lg": ["1.125rem", { lineHeight: "1.6" }],
       },
       boxShadow: {
-        "md-card": "0 2px 12px rgba(11, 30, 59, 0.08)",
-        "md-card-lg": "0 8px 32px rgba(11, 30, 59, 0.12)",
-        "md-gold": "0 0 0 1px rgba(197, 165, 114, 0.3), 0 8px 24px rgba(197, 165, 114, 0.15)",
+        "md-card": "0 2px 12px rgba(28, 42, 110, 0.08)",
+        "md-card-lg": "0 8px 32px rgba(28, 42, 110, 0.14)",
+        "md-cyan": "0 0 0 1px rgba(0, 160, 227, 0.3), 0 8px 24px rgba(0, 160, 227, 0.18)",
       },
       keyframes: {
         "fade-in": {

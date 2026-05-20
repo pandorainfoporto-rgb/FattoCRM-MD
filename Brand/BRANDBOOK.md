@@ -38,14 +38,18 @@ Anti-arquétipo: **Mágico** ("limpamos seu nome em 24h por R$ 99") e **Herói a
 
 ## 3. Paleta
 
+> **v1.1 (2026-05-20):** alinhada ao logo oficial recebido — navy escuro + ciano vibrante.
+> Substitui paleta v1.0 (navy + dourado) que era hipótese pré-logo.
+
 ### Primária
 
 | Token | Hex | Uso |
 |---|---|---|
-| `--md-navy-deep` | `#0B1E3B` | Background principal escuro, headlines em fundo claro |
-| `--md-navy` | `#1E3A5F` | Background secundário, navegação |
-| `--md-gold` | `#C5A572` | Acento de autoridade, selos, divisores, ícones jurídicos |
-| `--md-paper` | `#F8F5EF` | Fundo claro principal (off-white, sensação papel) |
+| `--md-navy-deep` | `#1C2A6E` | Background principal escuro (logo: pilares do "M"), headlines |
+| `--md-navy` | `#2C3E8E` | Background secundário, navegação |
+| `--md-cyan` | `#00A0E3` | Acento principal (logo: curva do "D" + texto "ASSESSORIA & CONSULTORIA"). Divisores, ícones, links hover |
+| `--md-cyan-soft` | `#5EBCEC` | Variação clara pra estados hover/active em fundo escuro |
+| `--md-paper` | `#F4F6FA` | Fundo claro principal (off-white levemente azulado, harmônico com o logo) |
 | `--md-ink` | `#0F172A` | Texto principal em fundo claro |
 
 ### Estado (sinalização)
@@ -68,20 +72,21 @@ Anti-arquétipo: **Mágico** ("limpamos seu nome em 24h por R$ 99") e **Herói a
 
 ### Combinações canônicas
 
-- **Hero (LP):** fundo `--md-navy-deep` + headline `--md-paper` + acento `--md-gold` + CTA `--md-success`
-- **Card de serviço:** fundo `--md-paper` + título `--md-navy-deep` + ícone `--md-gold` + corpo `--md-gray-700`
-- **Selo/badge:** fundo `--md-gold` + texto `--md-navy-deep` (alto contraste autoridade)
+- **Hero (LP):** fundo `--md-navy-deep` + headline `--md-paper` + acento `--md-cyan` + CTA `--md-success`
+- **Card de serviço:** fundo branco + título `--md-navy-deep` + ícone `--md-cyan` + corpo `--md-gray-700`
+- **Selo/badge:** fundo `--md-cyan/15` + texto `--md-cyan` (sutil) OU fundo `--md-cyan` + texto branco (alto contraste)
 - **CTA primário:** fundo `--md-success` + texto branco
 - **CTA secundário (WhatsApp):** fundo `#25D366` (verde WA oficial) + texto branco
+- **Logo em hero escuro:** envolto em "pílula" branca (`bg-white px-2.5 py-1.5 rounded-md shadow-md-card`) — preserva legibilidade do logo colorido em fundo navy
 
 ### Por que essa paleta
 
-- **Navy profundo** = autoridade jurídica clássica (mesma família dos togas, fóruns, instituições de direito).
-- **Dourado discreto** = prestígio sem ostentação. Sinaliza "advogado, não banco".
-- **Off-white "paper"** = sensação de documento jurídico (não branco frio de software SaaS).
-- **Verde-esperança** apenas em conquista/conversão. **Nunca verde "consumo"**.
+- **Navy profundo (do logo)** = autoridade jurídica clássica + confiança bancária/corporativa.
+- **Ciano vibrante (do logo)** = modernidade, tecnologia, transparência. Reforça o posicionamento "escritório-tecnologia" sem ser frio.
+- **Off-white paper levemente azulado** = harmoniza com os azuis primários, mantém sensação de documento.
+- **Verde-esperança** apenas em conquista/conversão (success, CTA). **Nunca verde "consumo"**.
 
-Evitar: vermelho como cor de marca (associa a alarme/restrição, é justamente o que o cliente quer sair). Roxo (associa a entretenimento). Cinza puro (frio).
+Evitar: vermelho como cor de marca (associa a alarme/restrição, é justamente o que o cliente quer sair). Roxo (associa a entretenimento). Cinza puro (frio). **Dourado** (paleta v1.0 descartada — não existe no logo).
 
 ---
 
@@ -119,22 +124,29 @@ Evitar: vermelho como cor de marca (associa a alarme/restrição, é justamente 
 
 ## 5. Logo
 
-### Status atual
-Aguardando arquivo vetorial oficial. Logo do Instagram tem resolução baixa (não usar em LP).
+### Status atual (2026-05-20)
+**Recebido:** `Brand/logos/logo-md-original.jpg` (JPEG, fundo branco, 13KB).
+Em uso no site via `apps/lp/public/logo-md.jpg` (header e footer).
 
-### Pedido ao cliente
-- SVG ou EPS (vetor)
-- PNG transparente 2000px+ pra fallback
-- Versões: positiva (sobre claro), negativa (sobre escuro), símbolo isolado (favicon)
+### Anatomia
+- **"M"** composto por 3 pilares verticais navy-deep (alusão a colunas / templos jurídicos)
+- **"D"** em curva ciano vibrante
+- **"ASSESSORIA & CONSULTORIA"** em ciano abaixo
+- **"EMPRESARIAL"** em navy abaixo
 
-### Placeholder enquanto isso
-Wordmark "MD" em Fraunces 600, navy deep, com underline dourado. Vide `Brand/logos/placeholder/`.
+### Ainda pedido ao cliente (melhoria)
+- **SVG ou EPS** (vetor) — pra escalar sem perda em qualquer tamanho
+- **PNG transparente 2000px+** pra fundos coloridos sem "pílula branca"
+- **Versão negativa** (logo monocromático branco) pra aplicar direto em fundo escuro
 
-### Aplicação
-- **Espaçamento mínimo:** altura do "M" em todos os lados (clear space).
-- **Tamanho mínimo:** 24px de altura em digital, 12mm em impresso.
-- **Cores:** navy-deep sobre paper. Paper sobre navy-deep. Nunca colorido em fundo colorido.
-- **Proibido:** distorcer proporção, aplicar sombra/glow, rotacionar, criar variações de cor não aprovadas.
+### Aplicação atual (com JPEG fundo branco)
+- **Em fundo escuro (header/footer hero):** envolver em pílula branca (`bg-white px-2.5 py-1.5 rounded-md shadow-md-card`) — solução padrão pra logos coloridos sem versão negativa
+- **Em fundo claro:** aplicar direto, sem pílula
+
+### Aplicação geral
+- **Espaçamento mínimo:** altura do "M" em todos os lados (clear space)
+- **Tamanho mínimo:** 28px de altura em digital, 15mm em impresso
+- **Proibido:** distorcer proporção, aplicar sombra/glow no logo, rotacionar, recolorir, isolar partes do "MD" sem aprovação
 
 ---
 

@@ -74,7 +74,7 @@ export default function LimpaNomePage() {
               },
             ].map(({ icon: Icon, title, text }, i) => (
               <div key={i} className="rounded-lg border border-md-gray-200 bg-white p-6">
-                <Icon className="h-7 w-7 text-md-gold" strokeWidth={1.5} />
+                <Icon className="h-7 w-7 text-md-cyan" strokeWidth={1.5} />
                 <h3 className="mt-4 font-display text-lg font-semibold text-md-navy-deep">
                   {title}
                 </h3>
@@ -218,7 +218,7 @@ export default function LimpaNomePage() {
 
         <Section variant="navy" className="text-center">
           <div className="mx-auto max-w-2xl">
-            <Gavel className="mx-auto h-12 w-12 text-md-gold" strokeWidth={1.5} />
+            <Gavel className="mx-auto h-12 w-12 text-md-cyan" strokeWidth={1.5} />
             <h2 className="mt-6 font-display text-h1 font-semibold text-md-paper">
               Comece pela análise. Sem compromisso.
             </h2>

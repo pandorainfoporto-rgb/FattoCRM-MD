@@ -41,7 +41,7 @@ export function Section({
               <p
                 className={cn(
                   "mb-4 font-mono text-xs uppercase tracking-[0.2em]",
-                  variant === "navy" ? "text-md-gold" : "text-md-gold",
+                  variant === "navy" ? "text-md-cyan" : "text-md-cyan",
                 )}
               >
                 {eyebrow}

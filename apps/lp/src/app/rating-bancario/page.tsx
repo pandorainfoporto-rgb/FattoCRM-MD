@@ -81,7 +81,7 @@ export default function RatingBancarioPage() {
                     ? "border-md-danger/30"
                     : bloco.tom === "success"
                       ? "border-md-success/30"
-                      : "border-md-gold/40")
+                      : "border-md-cyan/40")
                 }
               >
                 <h3
@@ -91,7 +91,7 @@ export default function RatingBancarioPage() {
                       ? "text-md-danger"
                       : bloco.tom === "success"
                         ? "text-md-success"
-                        : "text-md-gold")
+                        : "text-md-cyan")
                   }
                 >
                   {bloco.titulo}
@@ -106,7 +106,7 @@ export default function RatingBancarioPage() {
                             ? "bg-md-danger"
                             : bloco.tom === "success"
                               ? "bg-md-success"
-                              : "bg-md-gold")
+                              : "bg-md-cyan")
                         }
                       />
                       <span>{item}</span>
@@ -126,7 +126,7 @@ export default function RatingBancarioPage() {
         >
           <div className="grid gap-8 lg:grid-cols-2">
             <div className="rounded-lg border border-md-gray-200 bg-md-paper p-8">
-              <TrendingUp className="h-10 w-10 text-md-gold" strokeWidth={1.5} />
+              <TrendingUp className="h-10 w-10 text-md-cyan" strokeWidth={1.5} />
               <h3 className="mt-6 font-display text-h3 font-semibold text-md-navy-deep">
                 Rating Bancário (PF)
               </h3>
@@ -137,26 +137,26 @@ export default function RatingBancarioPage() {
               </p>
               <ul className="mt-6 space-y-2 text-sm text-md-gray-700">
                 <li className="flex items-start gap-2">
-                  <ArrowUpRight className="mt-0.5 h-4 w-4 flex-shrink-0 text-md-gold" strokeWidth={1.5} />
+                  <ArrowUpRight className="mt-0.5 h-4 w-4 flex-shrink-0 text-md-cyan" strokeWidth={1.5} />
                   <span>Diagnóstico Serasa + Boa Vista + Quod</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <ArrowUpRight className="mt-0.5 h-4 w-4 flex-shrink-0 text-md-gold" strokeWidth={1.5} />
+                  <ArrowUpRight className="mt-0.5 h-4 w-4 flex-shrink-0 text-md-cyan" strokeWidth={1.5} />
                   <span>Leitura do Registrato (SCR/BACEN)</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <ArrowUpRight className="mt-0.5 h-4 w-4 flex-shrink-0 text-md-gold" strokeWidth={1.5} />
+                  <ArrowUpRight className="mt-0.5 h-4 w-4 flex-shrink-0 text-md-cyan" strokeWidth={1.5} />
                   <span>Contestação de negativações + ação judicial</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <ArrowUpRight className="mt-0.5 h-4 w-4 flex-shrink-0 text-md-gold" strokeWidth={1.5} />
+                  <ArrowUpRight className="mt-0.5 h-4 w-4 flex-shrink-0 text-md-cyan" strokeWidth={1.5} />
                   <span>Plano de comportamento financeiro pós-limpeza</span>
                 </li>
               </ul>
             </div>
 
             <div className="rounded-lg border border-md-gray-200 bg-md-paper p-8">
-              <Briefcase className="h-10 w-10 text-md-gold" strokeWidth={1.5} />
+              <Briefcase className="h-10 w-10 text-md-cyan" strokeWidth={1.5} />
               <h3 className="mt-6 font-display text-h3 font-semibold text-md-navy-deep">
                 Rating Comercial (PJ)
               </h3>
@@ -167,19 +167,19 @@ export default function RatingBancarioPage() {
               </p>
               <ul className="mt-6 space-y-2 text-sm text-md-gray-700">
                 <li className="flex items-start gap-2">
-                  <ArrowUpRight className="mt-0.5 h-4 w-4 flex-shrink-0 text-md-gold" strokeWidth={1.5} />
+                  <ArrowUpRight className="mt-0.5 h-4 w-4 flex-shrink-0 text-md-cyan" strokeWidth={1.5} />
                   <span>Diagnóstico Serasa PJ + Boa Vista CenPro</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <ArrowUpRight className="mt-0.5 h-4 w-4 flex-shrink-0 text-md-gold" strokeWidth={1.5} />
+                  <ArrowUpRight className="mt-0.5 h-4 w-4 flex-shrink-0 text-md-cyan" strokeWidth={1.5} />
                   <span>Análise de protestos, ações judiciais ativas</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <ArrowUpRight className="mt-0.5 h-4 w-4 flex-shrink-0 text-md-gold" strokeWidth={1.5} />
+                  <ArrowUpRight className="mt-0.5 h-4 w-4 flex-shrink-0 text-md-cyan" strokeWidth={1.5} />
                   <span>Contestação + sustação de protesto</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <ArrowUpRight className="mt-0.5 h-4 w-4 flex-shrink-0 text-md-gold" strokeWidth={1.5} />
+                  <ArrowUpRight className="mt-0.5 h-4 w-4 flex-shrink-0 text-md-cyan" strokeWidth={1.5} />
                   <span>Estratégia tributária + societária quando integrada</span>
                 </li>
               </ul>
@@ -241,7 +241,7 @@ export default function RatingBancarioPage() {
                 <tr>
                   <th className="px-4 py-3"></th>
                   <th className="px-4 py-3 text-center">Vendedor de pacote</th>
-                  <th className="px-4 py-3 text-center text-md-gold">MD Assessoria</th>
+                  <th className="px-4 py-3 text-center text-md-cyan">MD Assessoria</th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-md-gray-200">
@@ -311,7 +311,7 @@ export default function RatingBancarioPage() {
 
         <Section variant="navy" className="text-center">
           <div className="mx-auto max-w-2xl">
-            <BarChart3 className="mx-auto h-12 w-12 text-md-gold" strokeWidth={1.5} />
+            <BarChart3 className="mx-auto h-12 w-12 text-md-cyan" strokeWidth={1.5} />
             <h2 className="mt-6 font-display text-h1 font-semibold text-md-paper">
               Vamos diagnosticar seu rating?
             </h2>

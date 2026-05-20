@@ -26,7 +26,7 @@ export function Faq({ items }: Props) {
               </span>
               <ChevronDown
                 className={cn(
-                  "h-5 w-5 flex-shrink-0 text-md-gold transition-transform",
+                  "h-5 w-5 flex-shrink-0 text-md-cyan transition-transform",
                   isOpen && "rotate-180",
                 )}
                 strokeWidth={1.5}

@@ -19,26 +19,26 @@
   }
 
   ::selection {
-    background-color: #C5A572;
-    color: #0B1E3B;
+    background-color: #00A0E3;
+    color: #FFFFFF;
   }
 }
 
 @layer components {
-  /* Padrão sutil tipo papel jurídico — usado em hero claro */
+  /* Padrão sutil tipo papel — usado em hero claro */
   .paper-grain {
     background-image:
       radial-gradient(circle at 1px 1px, rgba(15, 23, 42, 0.04) 1px, transparent 0);
     background-size: 24px 24px;
   }
 
-  /* Linha dourada de assinatura — divisor de seções formais */
-  .gold-rule {
-    @apply h-px w-16 bg-md-gold;
+  /* Linha ciano de assinatura — divisor de seções */
+  .cyan-rule {
+    @apply h-px w-16 bg-md-cyan;
   }
 
-  .gold-rule-center {
-    @apply mx-auto h-px w-16 bg-md-gold;
+  .cyan-rule-center {
+    @apply mx-auto h-px w-16 bg-md-cyan;
   }
 
   /* Botão primário canônico */
@@ -47,7 +47,7 @@
            bg-md-success px-6 py-3 text-base font-medium text-white
            shadow-md-card transition
            hover:shadow-md-card-lg hover:brightness-110
-           focus-visible:outline focus-visible:outline-2 focus-visible:outline-md-gold focus-visible:outline-offset-2;
+           focus-visible:outline focus-visible:outline-2 focus-visible:outline-md-cyan focus-visible:outline-offset-2;
   }
 
   /* Botão secundário (WhatsApp verde oficial) */
@@ -66,10 +66,10 @@
            transition hover:bg-md-paper/10;
   }
 
-  /* Badge dourado */
-  .badge-gold {
+  /* Badge ciano */
+  .badge-cyan {
     @apply inline-flex items-center gap-1.5 rounded-full
-           bg-md-gold/15 px-3 py-1 text-xs font-medium text-md-gold;
+           bg-md-cyan/15 px-3 py-1 text-xs font-medium text-md-cyan;
   }
 
   /* Card de serviço */

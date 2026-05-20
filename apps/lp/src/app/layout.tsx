@@ -25,8 +25,8 @@ const mono = JetBrains_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL(contact.siteUrl),
   title: {
-    default: "MD Assessoria — Limpa Nome, BACEN, Rating Bancário e Comercial",
-    template: "%s · MD Assessoria",
+    default: "MD Assessoria & Consultoria — Limpa Nome, BACEN, Rating Bancário e Comercial",
+    template: "%s · MD Assessoria & Consultoria",
   },
   description:
     "Escritório de advocacia especializado em recuperação de crédito. Limpa Nome, contestação BACEN/SCR, recuperação de rating bancário e comercial. Análise jurídica antes da promessa.",
@@ -46,7 +46,7 @@ export const metadata: Metadata = {
     type: "website",
     locale: "pt_BR",
     url: contact.siteUrl,
-    siteName: "MD Assessoria",
+    siteName: "MD Assessoria & Consultoria Empresarial",
     title: "MD Assessoria — Quando o banco fechou a porta, o direito ainda tem uma chave.",
     description:
       "Escritório-tecnologia em recuperação de crédito. Limpa Nome, BACEN, Rating. Compliance OAB e LGPD no DNA.",

@@ -18,8 +18,8 @@ type Props = {
 
 const toneStyles: Record<NonNullable<Props["tone"]>, string> = {
   dor: "bg-gradient-to-br from-md-navy-deep via-md-navy to-slate-800 text-md-paper/70",
-  transicao: "bg-gradient-to-br from-md-navy to-slate-500 text-md-paper/80",
-  realizacao: "bg-gradient-to-br from-md-gold-soft via-md-gold to-amber-400 text-md-navy-deep",
+  transicao: "bg-gradient-to-br from-md-navy to-md-cyan-soft text-md-paper/85",
+  realizacao: "bg-gradient-to-br from-md-cyan-soft via-md-cyan to-md-success text-white",
 };
 
 export function ImageSlot({
