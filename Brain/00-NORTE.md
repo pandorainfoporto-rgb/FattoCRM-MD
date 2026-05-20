@@ -149,13 +149,18 @@ Texto jurídico final SEMPRE redigido/revisado pelo advogado MD. Squad só faz e
 ## Pendências do cliente (aguardando)
 
 1. **Logo oficial em alta** (extrair do Instagram ou pedir arquivo vetorial)
-2. **Endereço físico + CNPJ + OAB responsável** (rodapé, contratos, compliance)
-3. **Foto profissional do advogado** (LP institucional + autoridade)
-4. **3-5 cases reais** com autorização (depoimentos LPs — observar OAB)
-5. **Credenciais Meta Business + WhatsApp Cloud API** (Sprint 4)
-6. **Export Kommo** (Sprint 2)
-7. **Telefone WhatsApp principal** (já existe na bio? confirmar)
-8. **Cidade/região de atuação** (SEO local)
+2. **Endereço físico + CNPJ** (rodapé, contratos, compliance)
+3. **Número OAB do Dr. Marcelo** (ex.: `OAB/RS XXXXX`) — nome já recebido
+4. **Foto profissional do Dr. Marcelo** (LP institucional + autoridade)
+5. **3-5 cases reais** com autorização (depoimentos LPs — observar OAB)
+6. **Credenciais Meta Business + WhatsApp Cloud API** (Sprint 4)
+7. **Export Kommo** (Sprint 2)
+8. **Confirmar formato do WhatsApp** — recebido `(54) 9999-9162`. Padrão BR de celular é `9XXXX-XXXX` (9 inicial). Confirmar se é número correto.
+9. **Cidade/região de atuação** (SEO local) — DDD 54 sugere RS (Caxias do Sul / Serra Gaúcha), confirmar.
+
+## Dados recebidos
+
+- **2026-05-20** — Advogado responsável: **Dr. Marcelo**. WhatsApp: **(54) 9999-9162** (confirmar 9 inicial).
 
 ## Histórico de decisões
 
