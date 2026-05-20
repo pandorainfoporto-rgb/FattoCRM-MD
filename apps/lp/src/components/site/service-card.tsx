@@ -17,7 +17,7 @@ export function ServiceCard({
   cta = "Ver detalhes",
 }: Props) {
   return (
-    <Link href={href} className="card-service block">
+    <Link href={href} className="card-service group block">
       <div className="absolute right-6 top-6 opacity-10 transition group-hover:opacity-20">
         <Icon className="h-20 w-20 text-md-cyan" strokeWidth={1} />
       </div>

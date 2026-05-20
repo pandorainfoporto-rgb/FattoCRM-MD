@@ -72,9 +72,10 @@
            bg-md-cyan/15 px-3 py-1 text-xs font-medium text-md-cyan;
   }
 
-  /* Card de serviço */
+  /* Card de serviço — class "group" precisa ser aplicada direto no JSX
+     (Tailwind não aceita group via @apply) */
   .card-service {
-    @apply group relative overflow-hidden rounded-lg border border-md-gray-200
+    @apply relative overflow-hidden rounded-lg border border-md-gray-200
            bg-white p-6 shadow-md-card transition hover:shadow-md-card-lg;
   }
 }
