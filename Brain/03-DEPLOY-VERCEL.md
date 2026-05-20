@@ -106,6 +106,7 @@ Branches que não são `main` viram preview deployments automáticos (útil pra 
 2. **Esquecer de declarar env var em `turbo.json:build.env`** = variável não chega no build do Next. Já corrigido aqui.
 3. **Linkar Vercel do app interno** (`apps/lp`) em vez da raiz = quebra workspace. Já documentado acima.
 4. **Tipos das env vars:** todas `NEXT_PUBLIC_*` ficam expostas no client. Não colocar segredos aí. Segredos (Supabase service role, Anthropic key, etc.) ficam sem prefixo `NEXT_PUBLIC_` — chegam Sprint 2.
+5. **`ERR_INVALID_THIS` no `pnpm install`** = pnpm < 9.7 em Node 22+ (Vercel default 2024+). Fix permanente: `packageManager: "pnpm@9.15.5"` + `engines.node: ">=20.11.0 <23.0.0"` + `.nvmrc` com `20`. Já aplicado no repo após primeira tentativa de deploy 2026-05-20.
 
 ## Histórico
 
