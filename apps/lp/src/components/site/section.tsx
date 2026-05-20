@@ -68,7 +68,7 @@ export function Section({
               </p>
             )}
             {align === "center" && (
-              <div className="gold-rule-center mt-8" />
+              <div className="cyan-rule-center mt-8" />
             )}
           </div>
         )}
