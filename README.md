@@ -3,9 +3,14 @@
 Vertical jurídico-financeiro do FattoCRM para **MD Assessoria e Consultoria** — escritório de advocacia especializado em Limpa Nome, BACEN, Rating Bancário e Rating Comercial.
 
 > **Status:** v0.1.0 — Sprint 1 em execução (LPs + branding).
-> **Stack:** Next.js 14 · Tailwind v3 · pnpm + Turbo · TypeScript strict.
+> **Stack:** Next.js 14 · Tailwind v3 · npm workspaces · TypeScript strict.
 > **Repo:** [pandorainfoporto-rgb/FattoCRM-MD](https://github.com/pandorainfoporto-rgb/FattoCRM-MD)
 > **Domínio:** `limpanomemd.com.br` (disponível, registrar).
+
+> **Nota técnica:** monorepo via npm workspaces (não pnpm/Turbo).
+> Decisão tomada em 2026-05-20 após 5 tentativas frustradas de build do Vercel
+> com `ERR_INVALID_THIS` (bug do runtime Node do Vercel com URLSearchParams).
+> Ver `Brain/03-DEPLOY-VERCEL.md §Pegadinhas`.
 
 ## Estrutura
 
@@ -15,23 +20,22 @@ FattoCRM_MD/
 ├── Brand/              brandbook + paleta + imagens-referencia
 ├── apps/
 │   └── lp/             Next.js 14 — landing pages (porta 3700)
-├── package.json
-├── pnpm-workspace.yaml
-├── turbo.json
-└── tsconfig.base.json
+├── package.json        npm workspaces
+├── tsconfig.base.json
+└── vercel.json         deploy config
 ```
 
 ## Como rodar
 
 ```bash
 # Instalar (raiz)
-pnpm install
+npm install
 
-# Dev — todas apps via Turbo
-pnpm dev
+# Dev — Sprint 1 só tem 1 app (LP)
+npm run dev
 
-# Só LP
-pnpm --filter @md/lp dev
+# Ou diretamente
+npm run dev --workspace=@md/lp
 ```
 
 Abre em [http://localhost:3700](http://localhost:3700).

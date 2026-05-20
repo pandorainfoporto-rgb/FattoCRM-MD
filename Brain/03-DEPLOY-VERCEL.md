@@ -106,13 +106,16 @@ Branches que não são `main` viram preview deployments automáticos (útil pra 
 2. **Esquecer de declarar env var em `turbo.json:build.env`** = variável não chega no build do Next. Já corrigido aqui.
 3. **Linkar Vercel do app interno** (`apps/lp`) em vez da raiz = quebra workspace. Já documentado acima.
 4. **Tipos das env vars:** todas `NEXT_PUBLIC_*` ficam expostas no client. Não colocar segredos aí. Segredos (Supabase service role, Anthropic key, etc.) ficam sem prefixo `NEXT_PUBLIC_` — chegam Sprint 2.
-5. **`ERR_INVALID_THIS` no `pnpm install`** = pnpm built-in do Vercel (~8.x) quebra com Node moderno. `packageManager: "pnpm@X"` no package.json **não é honrado** se Corepack não é invocado. **Fix definitivo aplicado em 2026-05-20** após 4 tentativas falhadas:
-   - `engines.node: ">=20.11.0 <22.0.0"` (estrito)
-   - Project Setting Node.js Version: `20.x` (UI Vercel)
-   - **`vercel.json` com `installCommand` forçando Corepack:** `corepack enable && corepack prepare pnpm@10.4.1 --activate && pnpm install --no-frozen-lockfile`
-   - `buildCommand`: `pnpm turbo build --filter=@md/lp`
-   - `outputDirectory`: `apps/lp/.next`
-   - Esse setup garante pnpm 10.4.1 real (não o built-in velho) com Node 20 LTS.
+5. **`ERR_INVALID_THIS` no `pnpm install`** — bug do runtime do Vercel com pnpm + Node 20.x atual. Manifesta independentemente da versão do pnpm:
+   - Tentativa 1: pnpm 9.0.0 + Node 22 → falhou
+   - Tentativa 2: pnpm 9.15.5 + engines `<23` → Vercel caiu em Node 22 → falhou
+   - Tentativa 3: pnpm 9.15.5 + engines `<22` + Project Setting 20.x → falhou ainda (pnpm built-in velho ignorou `packageManager`)
+   - Tentativa 4: `corepack enable && corepack prepare pnpm@10.4.1` no `installCommand` → Corepack ATIVOU pnpm 10.4.1, mas o mesmo `ERR_INVALID_THIS` aconteceu → confirma bug no runtime Node do Vercel
+   - **DECISÃO 2026-05-20: migrar pra `npm workspaces`** (nativo, sem dependência de Corepack/pnpm/Turbo). `vercel.json` ficou minimal:
+     ```json
+     { "installCommand": "npm install", "buildCommand": "npm run build --workspace=@md/lp", "outputDirectory": "apps/lp/.next" }
+     ```
+   - `pnpm-workspace.yaml`, `turbo.json`, `.npmrc` removidos. `package.json` não tem mais `packageManager` nem deps de turbo.
 
 ## Histórico
 

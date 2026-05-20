@@ -3,20 +3,14 @@
   "version": "0.1.0",
   "private": true,
   "description": "FattoCRM-MD — vertical jurídico-financeiro para MD Assessoria e Consultoria. Limpa Nome, BACEN, Rating Bancário/Comercial.",
-  "packageManager": "pnpm@10.4.1",
   "engines": {
     "node": ">=20.11.0 <22.0.0"
   },
   "scripts": {
-    "dev": "turbo dev",
-    "build": "turbo build",
-    "lint": "turbo lint",
-    "typecheck": "turbo typecheck",
-    "clean": "turbo clean"
-  },
-  "devDependencies": {
-    "turbo": "^2.0.0",
-    "typescript": "^5.5.0"
+    "dev": "npm run dev --workspace=@md/lp",
+    "build": "npm run build --workspace=@md/lp",
+    "lint": "npm run lint --workspace=@md/lp",
+    "typecheck": "npm run typecheck --workspace=@md/lp"
   },
   "workspaces": [
     "apps/*",
