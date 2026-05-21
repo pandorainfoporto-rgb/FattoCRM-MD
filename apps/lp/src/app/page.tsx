@@ -9,6 +9,7 @@ import { ProcessTimeline } from "@/components/site/process-timeline";
 import { Faq } from "@/components/site/faq";
 import { TrustBar } from "@/components/site/trust-bar";
 import { ImageSlot } from "@/components/site/image-slot";
+import { Reveal } from "@/components/site/reveal";
 import { whatsappMessages } from "@/lib/contact";
 
 export const metadata = {
@@ -35,6 +36,27 @@ export default function Home() {
 
         <TrustBar />
 
+        {/* Faixa de credibilidade — órgãos de crédito */}
+        <div className="border-b border-md-gray-200 bg-white py-10">
+          <div className="mx-auto max-w-7xl px-6 lg:px-8">
+            <p className="text-center font-mono text-xs uppercase tracking-[0.2em] text-md-gray-400">
+              Atuamos junto aos principais cadastros de crédito do país
+            </p>
+            <div className="mt-6 flex flex-wrap items-center justify-center gap-x-8 gap-y-3 sm:gap-x-12">
+              {["Serasa", "SPC Brasil", "Boa Vista", "BACEN / SCR", "Quod", "Registrato"].map(
+                (orgao) => (
+                  <span
+                    key={orgao}
+                    className="font-display text-lg font-semibold text-md-navy-deep/40 transition hover:text-md-navy-deep/70"
+                  >
+                    {orgao}
+                  </span>
+                ),
+              )}
+            </div>
+          </div>
+        </div>
+
         <Section
           id="servicos"
           eyebrow="O que fazemos"
@@ -44,34 +66,42 @@ export default function Home() {
           variant="paper"
         >
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            <ServiceCard
-              icon={ShieldCheck}
-              title="Limpa Nome"
-              description="Contestação de negativações no SPC, Serasa e Boa Vista. Análise da regularidade da inscrição, prazo prescricional e indenização por dano moral quando cabível."
-              href="/limpa-nome"
-              cta="Saber mais"
-            />
-            <ServiceCard
-              icon={Landmark}
-              title="BACEN / SCR"
-              description="Contestação de registros no Sistema de Informações de Créditos do Banco Central via Registrato. Verificação de dívidas indevidas, valores incorretos e prescrição."
-              href="/bacen"
-              cta="Saber mais"
-            />
-            <ServiceCard
-              icon={TrendingUp}
-              title="Rating Bancário"
-              description="Estratégia jurídica para recuperação do score e reabertura de crédito em bancos. Atuação na origem dos apontamentos — não na superfície."
-              href="/rating-bancario"
-              cta="Saber mais"
-            />
-            <ServiceCard
-              icon={Briefcase}
-              title="Rating Comercial"
-              description="Recuperação de score para crédito B2B junto a fornecedores, distribuidores e instituições. Diagnóstico Quod, Serasa Experian e Boa Vista."
-              href="/rating-bancario#comercial"
-              cta="Saber mais"
-            />
+            <Reveal delay={0}>
+              <ServiceCard
+                icon={ShieldCheck}
+                title="Limpa Nome"
+                description="Contestação de negativações no SPC, Serasa e Boa Vista. Análise da regularidade da inscrição, prazo prescricional e indenização por dano moral quando cabível."
+                href="/limpa-nome"
+                cta="Saber mais"
+              />
+            </Reveal>
+            <Reveal delay={0.1}>
+              <ServiceCard
+                icon={Landmark}
+                title="BACEN / SCR"
+                description="Contestação de registros no Sistema de Informações de Créditos do Banco Central via Registrato. Verificação de dívidas indevidas, valores incorretos e prescrição."
+                href="/bacen"
+                cta="Saber mais"
+              />
+            </Reveal>
+            <Reveal delay={0.2}>
+              <ServiceCard
+                icon={TrendingUp}
+                title="Rating Bancário"
+                description="Estratégia jurídica para recuperação do score e reabertura de crédito em bancos. Atuação na origem dos apontamentos — não na superfície."
+                href="/rating-bancario"
+                cta="Saber mais"
+              />
+            </Reveal>
+            <Reveal delay={0.3}>
+              <ServiceCard
+                icon={Briefcase}
+                title="Rating Comercial"
+                description="Recuperação de score para crédito B2B junto a fornecedores, distribuidores e instituições. Diagnóstico Quod, Serasa Experian e Boa Vista."
+                href="/rating-bancario#comercial"
+                cta="Saber mais"
+              />
+            </Reveal>
           </div>
         </Section>
 

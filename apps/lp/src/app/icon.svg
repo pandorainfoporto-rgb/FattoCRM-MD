@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <rect width="64" height="64" rx="13" fill="#F4F6FA"/>
+  <!-- pilares do "M" (navy) -->
+  <rect x="13" y="17" width="6.5" height="30" rx="1" fill="#1C2A6E"/>
+  <rect x="23" y="17" width="6.5" height="30" rx="1" fill="#1C2A6E"/>
+  <rect x="33" y="17" width="6.5" height="30" rx="1" fill="#1C2A6E"/>
+  <!-- arco do "D" (ciano) -->
+  <path d="M 42 17 A 15 15 0 0 1 42 47" fill="none" stroke="#00A0E3" stroke-width="6.5" stroke-linecap="round"/>
+</svg>

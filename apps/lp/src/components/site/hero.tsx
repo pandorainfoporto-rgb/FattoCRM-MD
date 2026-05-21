@@ -1,6 +1,7 @@
+import Link from "next/link";
 import { ImageSlot } from "./image-slot";
 import { CtaWhatsapp } from "./cta-whatsapp";
-import { Shield, Clock, FileCheck } from "lucide-react";
+import { Shield, Clock, FileCheck, ArrowDown, Sparkles } from "lucide-react";
 
 type Props = {
   eyebrow?: string;
@@ -10,6 +11,8 @@ type Props = {
   whatsappMessage: string;
   imageSlotId: string;
   imageDescription: string;
+  /** label do botão secundário que rola pra seção de serviços */
+  secondaryHref?: string;
 };
 
 export function Hero({
@@ -20,8 +23,8 @@ export function Hero({
   whatsappMessage,
   imageSlotId,
   imageDescription,
+  secondaryHref = "#servicos",
 }: Props) {
-  // Realça highlightWord no headline (se passado) com cor dourada
   const headlineRendered = highlightWord
     ? headline.split(highlightWord).flatMap((part, i, arr) =>
         i < arr.length - 1
@@ -31,24 +34,39 @@ export function Hero({
     : headline;
 
   return (
-    <section className="relative isolate overflow-hidden bg-md-navy-deep pt-20 pb-16 lg:pt-32 lg:pb-24">
-      {/* textura sutil */}
+    <section className="relative isolate overflow-hidden bg-md-navy-deep pt-28 pb-20 lg:pt-36 lg:pb-28">
+      {/* glow ciano radial */}
       <div
-        className="absolute inset-0 opacity-[0.04]"
+        className="pointer-events-none absolute -right-32 -top-32 h-[36rem] w-[36rem] rounded-full opacity-30 blur-3xl"
+        style={{ background: "radial-gradient(circle, #00A0E3 0%, transparent 70%)" }}
+      />
+      <div
+        className="pointer-events-none absolute -bottom-40 -left-40 h-[32rem] w-[32rem] rounded-full opacity-20 blur-3xl"
+        style={{ background: "radial-gradient(circle, #2C3E8E 0%, transparent 70%)" }}
+      />
+      {/* textura de pontos */}
+      <div
+        className="absolute inset-0 opacity-[0.05]"
         style={{
-          backgroundImage:
-            "radial-gradient(circle at 1px 1px, #C5A572 1px, transparent 0)",
+          backgroundImage: "radial-gradient(circle at 1px 1px, #C5D6E8 1px, transparent 0)",
           backgroundSize: "32px 32px",
         }}
       />
 
-      <div className="relative mx-auto grid max-w-7xl gap-12 px-6 lg:grid-cols-2 lg:gap-16 lg:px-8 lg:items-center">
-        <div>
+      <div className="relative mx-auto grid max-w-7xl gap-12 px-6 lg:grid-cols-[1.1fr_0.9fr] lg:gap-16 lg:px-8 lg:items-center">
+        <div className="animate-fade-in">
           {eyebrow && (
-            <p className="mb-6 font-mono text-xs uppercase tracking-[0.2em] text-md-cyan">
-              {eyebrow}
-            </p>
+            <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-md-cyan/30 bg-md-cyan/10 px-4 py-1.5">
+              <span className="relative flex h-2 w-2">
+                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-md-cyan opacity-75" />
+                <span className="relative inline-flex h-2 w-2 rounded-full bg-md-cyan" />
+              </span>
+              <span className="font-mono text-xs uppercase tracking-[0.18em] text-md-cyan-soft">
+                {eyebrow}
+              </span>
+            </div>
           )}
+
           <h1 className="font-display text-display font-semibold text-md-paper">
             {headlineRendered}
           </h1>
@@ -57,47 +75,58 @@ export function Hero({
             {subhead}
           </p>
 
-          <div className="mt-10 flex flex-wrap gap-4">
+          <div className="mt-10 flex flex-wrap items-center gap-4">
             <CtaWhatsapp
               message={whatsappMessage}
               label="Solicitar análise jurídica"
               size="lg"
             />
+            <Link
+              href={secondaryHref}
+              className="inline-flex items-center gap-2 rounded-md border border-md-paper/25 px-6 py-4 text-base font-medium text-md-paper transition hover:bg-md-paper/10"
+            >
+              Ver serviços
+              <ArrowDown className="h-4 w-4" strokeWidth={1.5} />
+            </Link>
           </div>
 
-          <div className="mt-12 grid gap-6 text-sm text-md-paper/70 sm:grid-cols-3">
-            <div className="flex items-start gap-2">
-              <Shield className="mt-0.5 h-5 w-5 flex-shrink-0 text-md-cyan" strokeWidth={1.5} />
-              <span>Advogado responsável<br/>OAB ativo</span>
-            </div>
-            <div className="flex items-start gap-2">
-              <Clock className="mt-0.5 h-5 w-5 flex-shrink-0 text-md-cyan" strokeWidth={1.5} />
-              <span>Análise em<br/>até 48h úteis</span>
-            </div>
-            <div className="flex items-start gap-2">
-              <FileCheck className="mt-0.5 h-5 w-5 flex-shrink-0 text-md-cyan" strokeWidth={1.5} />
-              <span>Compliance<br/>LGPD + OAB</span>
-            </div>
+          <div className="mt-12 grid max-w-lg gap-px overflow-hidden rounded-lg border border-md-paper/10 bg-md-paper/5 sm:grid-cols-3">
+            {[
+              { icon: Shield, top: "Advogado", bottom: "responsável OAB" },
+              { icon: Clock, top: "Até 48h", bottom: "para o parecer" },
+              { icon: FileCheck, top: "LGPD + OAB", bottom: "no DNA" },
+            ].map(({ icon: Icon, top, bottom }, i) => (
+              <div key={i} className="bg-md-navy-deep/40 px-5 py-4">
+                <Icon className="h-5 w-5 text-md-cyan" strokeWidth={1.5} />
+                <p className="mt-2 font-display text-sm font-semibold text-md-paper">{top}</p>
+                <p className="text-xs text-md-paper/60">{bottom}</p>
+              </div>
+            ))}
           </div>
         </div>
 
-        <div className="relative">
+        <div className="relative animate-fade-in-slow">
+          {/* moldura com glow */}
+          <div className="absolute -inset-3 rounded-2xl bg-gradient-to-tr from-md-cyan/20 to-transparent blur-xl" />
           <ImageSlot
             slotId={imageSlotId}
             description={imageDescription}
             tone="dor"
             aspect="aspect-[4/5]"
-            className="shadow-md-card-lg"
+            className="relative shadow-md-card-lg ring-1 ring-md-paper/10"
             priority
           />
-          {/* selo dourado flutuante */}
-          <div className="absolute -bottom-4 -left-4 max-w-[200px] rounded-md bg-md-cyan p-4 text-md-navy-deep shadow-md-cyan lg:-left-8">
-            <p className="font-display text-xs uppercase tracking-wider">
-              Análise jurídica
-            </p>
-            <p className="mt-1 font-display text-base font-semibold leading-tight">
-              antes da promessa.
-            </p>
+          {/* selo flutuante */}
+          <div className="absolute -bottom-5 -left-4 flex items-center gap-3 rounded-xl bg-md-cyan p-4 shadow-md-cyan lg:-left-8">
+            <Sparkles className="h-8 w-8 flex-shrink-0 text-white" strokeWidth={1.5} />
+            <div className="text-white">
+              <p className="font-mono text-[10px] uppercase tracking-wider opacity-80">
+                Sem promessa
+              </p>
+              <p className="font-display text-sm font-semibold leading-tight">
+                Análise jurídica primeiro.
+              </p>
+            </div>
           </div>
         </div>
       </div>
