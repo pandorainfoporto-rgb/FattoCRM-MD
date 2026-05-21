@@ -1,0 +1,178 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* =========================================================
+ * MD Assessoria — tokens semânticos (dark/light)
+ *
+ * Padrão herdado do Fatto V2:
+ *  - paleta brand fica fixa nos dois temas (--color-brand-*, --color-azure-*)
+ *  - tokens "de superfície" mudam por tema (--color-background, --color-foreground, etc)
+ *  - --color-foreground é RGB triple ("248 250 252") pra usar com /opacity
+ *    nos utilitários Tailwind (text-foreground/40, border-foreground/12, etc)
+ *
+ * NOTE: cores brand atuais são herança Fatto (#1C2A6E / #00A0E3 / #0A0A0B).
+ * Quando o branding próprio da MD Assessoria for definido (fase 2), troca AQUI.
+ * O objetivo da plataforma é ser agnostic — cada app vertical (Pandora, etc)
+ * pode sobrescrever os tokens em seu próprio globals.css se precisar.
+ * ========================================================= */
+
+:root {
+  /* Paleta brand — igual em dark e light */
+  --color-brand-primary: #1C2A6E;
+  --color-brand-cyan: #00A0E3;
+  --color-brand-dark: #0A0A0B;
+
+  --color-azure-50: #E6EEFF;
+  --color-azure-100: #CCDDFF;
+  --color-azure-200: #99BBFF;
+  --color-azure-300: #6699FF;
+  --color-azure-400: #3377FF;
+  --color-azure-500: #1C2A6E;
+  --color-azure-600: #16215A;
+  --color-azure-700: #101A47;
+
+  --color-success: #10B981;
+  --color-warning: #F97316;
+  --color-error: #EF4444;
+  --color-rose-500: #F43F5E;
+
+  --font-family-heading: var(--font-heading), system-ui, sans-serif;
+  --font-family-body: var(--font-body), system-ui, sans-serif;
+}
+
+/* === DARK (default) === */
+:root,
+:root.dark {
+  color-scheme: dark;
+  --color-background: #0A0A0B;
+  --color-background-elevated: #0F172A;
+  --color-foreground: 248 250 252;
+  --color-foreground-hex: #F8FAFC;
+  --color-border: 255 255 255;
+  --color-surface: rgba(15, 23, 42, 0.55);
+  --color-surface-strong: rgba(15, 23, 42, 0.75);
+  --color-sidebar: rgba(10, 10, 11, 0.7);
+  --color-header: rgba(10, 10, 11, 0.55);
+  --color-primary: #1C2A6E;
+  --color-primary-foreground: #FFFFFF;
+  --color-muted: #334155;
+  --color-muted-foreground: #94A3B8;
+  --color-card: rgba(15, 23, 42, 0.55);
+  --color-card-solid: #0F172A;
+  --color-accent: #1C2A6E;
+}
+
+/* === LIGHT === */
+:root.light {
+  color-scheme: light;
+  --color-background: #F7F8FA;
+  --color-background-elevated: #FFFFFF;
+  --color-foreground: 10 10 11;
+  --color-foreground-hex: #0A0A0B;
+  --color-border: 10 10 11;
+  --color-surface: rgba(255, 255, 255, 0.7);
+  --color-surface-strong: rgba(255, 255, 255, 0.9);
+  --color-sidebar: rgba(255, 255, 255, 0.8);
+  --color-header: rgba(255, 255, 255, 0.7);
+  --color-primary: #1C2A6E;
+  --color-primary-foreground: #FFFFFF;
+  --color-muted: #CBD5E1;
+  --color-muted-foreground: #475569;
+  --color-card: rgba(255, 255, 255, 0.95);
+  --color-card-solid: #FFFFFF;
+  --color-accent: #1C2A6E;
+}
+
+/* === Base === */
+html,
+body {
+  background: var(--color-background);
+  color: rgb(var(--color-foreground));
+  font-family: var(--font-family-body);
+  transition:
+    background-color 300ms ease,
+    color 300ms ease;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-family-heading);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+}
+
+/* === Glass morphism === */
+.glass {
+  background: var(--color-surface);
+  backdrop-filter: blur(24px) saturate(1.4);
+  -webkit-backdrop-filter: blur(24px) saturate(1.4);
+  border: 1px solid rgb(var(--color-border) / 0.08);
+}
+
+.glass-strong {
+  background: var(--color-surface-strong);
+  backdrop-filter: blur(32px) saturate(1.6);
+  -webkit-backdrop-filter: blur(32px) saturate(1.6);
+  border: 1px solid rgb(var(--color-border) / 0.08);
+}
+
+.glass-sidebar {
+  background: var(--color-sidebar);
+  backdrop-filter: blur(28px) saturate(1.4);
+  -webkit-backdrop-filter: blur(28px) saturate(1.4);
+}
+
+.glass-header {
+  background: var(--color-header);
+  backdrop-filter: blur(24px) saturate(1.4);
+  -webkit-backdrop-filter: blur(24px) saturate(1.4);
+  border-bottom: 1px solid rgb(var(--color-border) / 0.08);
+}
+
+.bg-gradient-brand {
+  background: linear-gradient(135deg, var(--color-brand-primary) 0%, var(--color-brand-cyan) 100%);
+}
+
+.shadow-brand {
+  box-shadow: 0 0 40px rgb(0 82 255 / 0.4);
+}
+
+/* === Selects nativos respeitam tema === */
+select {
+  color: rgb(var(--color-foreground));
+  accent-color: var(--color-brand-primary);
+}
+
+select option {
+  background-color: var(--color-background-elevated);
+  color: rgb(var(--color-foreground));
+}
+
+/* === Scrollbars === */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: rgb(var(--color-border) / 0.1);
+  border-radius: 3px;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: rgb(var(--color-border) / 0.2);
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* === Animações === */
+.ease-spring {
+  transition-timing-function: cubic-bezier(0.68, -0.6, 0.32, 1.6);
+}

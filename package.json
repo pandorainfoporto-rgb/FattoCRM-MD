@@ -8,12 +8,14 @@
   },
   "scripts": {
     "dev": "npm run dev --workspace=@md/lp",
+    "dev:erp": "npm run dev --workspace=@md/erp",
     "build": "npm run build --workspace=@md/lp",
-    "lint": "npm run lint --workspace=@md/lp",
-    "typecheck": "npm run typecheck --workspace=@md/lp"
+    "build:erp": "npm run build --workspace=@md/erp",
+    "lint": "npm run lint --workspaces --if-present",
+    "typecheck": "npm run typecheck --workspaces --if-present"
   },
   "workspaces": [
     "apps/*",
-    "packages/*"
+    "packages/providers/*"
   ]
 }

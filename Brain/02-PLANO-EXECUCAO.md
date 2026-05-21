@@ -62,6 +62,34 @@ Sem esses dados o site sobe com placeholders. Substituição é trivial (env var
 
 **Objetivo:** trazer o esqueleto do FattoCRM pra dentro do FattoCRM_MD, customizado para a operação MD.
 
+### ✅ Fase 2a — Bootstrap do código (FEITO 2026-05-20)
+
+- [x] Copiado `apps/erp/` (73 arquivos) do FattoCRM
+- [x] Copiados `packages/providers/core` + `packages/providers/ixc`
+- [x] Renomeado `@fattocrm/*` → `@md/*` (package.json + imports)
+- [x] `workspace:*` → `*` (migrado pra npm workspaces — pnpm causava ERR_INVALID_THIS no Vercel)
+- [x] Porta dev 3500 → 3600
+- [x] Rebranding: paleta Fatto (#0052FF/#00D1FF) → MD (#1C2A6E navy / #00A0E3 ciano) no `globals.css` + shadow no `tailwind.config`
+- [x] Textos "FattoCRM" → "MD Assessoria" no shell
+- [x] `package.json` raiz: workspaces `["apps/*","packages/providers/*"]` + scripts `dev:erp`/`build:erp`
+- [x] **Validado local:** `npm install` (438 pkgs OK) + `typecheck` ERP limpo + `build` ERP 14 páginas OK
+- [x] Schema jurídico: `supabase/migrations/20260520_0002_schema_juridico_md.sql` — tabelas `processos`, `processo_movimentacoes`, `processo_documentos`, `pareceres`, `contratos` (multi-tenant + RLS, padrão do schema base)
+
+ERP roda em `localhost:3600` via `npm run dev:erp`. Não autentica ainda (sem Supabase plugado).
+
+### ⏳ Fase 2b — Supabase + Auth (PENDENTE — depende do Renato)
+
+1. **Criar projeto Supabase MD** (região `sa-east-1` São Paulo)
+2. Aplicar migrations: `0001_initial_schema` (base) + `0002_schema_juridico_md`
+3. Refinar schema jurídico com o Dr. Marcelo (campos reais do fluxo MD)
+4. Plugar env vars no ERP (`.env.local`): `NEXT_PUBLIC_SUPABASE_URL`, `NEXT_PUBLIC_SUPABASE_ANON_KEY`, `SUPABASE_SERVICE_ROLE_KEY`
+5. Validar login/signup/onboarding real
+6. Deploy ERP no Vercel (subdomínio `app.limpanomemd.com.br`)
+
+### Notas do schema base (já multi-tenant)
+
+O `0001_initial_schema` do FattoCRM já tem `vertical='advocacia'` no enum de tenants. Tabelas base: tenants, tenant_membros, provider_config, canais, departamentos, etiquetas, motivos, mensagens_rapidas, clientes, agentes_ia, agente_tools, agente_escalonamento, atendimentos, mensagens, kb_categorias, kb_artigos, auditoria_eventos.
+
 ### Plano
 
 1. Copiar do `FattoCRM/`:

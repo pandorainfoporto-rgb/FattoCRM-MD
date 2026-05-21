@@ -1,0 +1,21 @@
+# Supabase project config — FattoCRM
+# https://supabase.com/docs/guides/local-development/cli/config
+
+project_id = "fattocrm"
+
+[db]
+major_version = 15
+
+[auth]
+site_url = "http://localhost:3500"
+additional_redirect_urls = [
+  "http://localhost:3500/auth/callback",
+  "https://fatto-crm-erp.vercel.app/auth/callback",
+]
+jwt_expiry = 3600
+enable_signup = true
+
+[auth.email]
+enable_signup = true
+double_confirm_changes = true
+enable_confirmations = false  # ativa quando for pra prod
