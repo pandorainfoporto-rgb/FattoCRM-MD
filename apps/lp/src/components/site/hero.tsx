@@ -88,6 +88,7 @@ export function Hero({
             tone="dor"
             aspect="aspect-[4/5]"
             className="shadow-md-card-lg"
+            priority
           />
           {/* selo dourado flutuante */}
           <div className="absolute -bottom-4 -left-4 max-w-[200px] rounded-md bg-md-cyan p-4 text-md-navy-deep shadow-md-cyan lg:-left-8">

@@ -12,7 +12,25 @@
 - **Diversidade real BR.** Fenótipos, idades 25-65, classe C/B. Roupa cotidiana.
 - **Sem stock óbvio.** Evitar fotos batidas (handshake corporativo genérico, mulher sorrindo pra notebook).
 
-## Slots em uso (LP)
+## Imagens em produção (Unsplash — curadoria 2026-05-20)
+
+Mapeadas em `apps/lp/src/lib/images.ts`. Licença Unsplash (uso comercial, sem atribuição obrigatória). Pra trocar por arte própria: subir em `apps/lp/public/images/` e editar a `url` no `lib/images.ts`.
+
+| slotId | Unsplash ID | Cena |
+|---|---|---|
+| `hero-institucional` | `photo-1758523418820-a492bf647c63` | Casal preocupado com boletos à mesa (DOR) |
+| `limpa-nome-dor` | `photo-1758611971935-331135af686d` | Homem cansado diante do computador (DOR) |
+| `bacen-dor` | `photo-1758876019043-cedb0b6f56ea` | Pessoa preocupada analisando finanças (DOR) |
+| `rating-dor` | `photo-1700190614797-1054d4c8996e` | Homem desanimado, crédito negado (DOR) |
+| `advogado-mesa` | `photo-1614605844432-731c32334c49` | Advogada analisando documentos (TRANSIÇÃO) |
+| `limpa-nome-consulta` | `photo-1758520144427-ddb02ac74e9d` | Cliente e advogada apertando mãos (TRANSIÇÃO) |
+| `realizacao-handshake` | `photo-1758691031979-6128d4029604` | Aperto de mãos fechando acordo (REALIZAÇÃO) |
+| `realizacao-sorriso` | `photo-1714482128431-617b379f69bd` | Mulher sorrindo aliviada no celular (REALIZAÇÃO) |
+| `realizacao-caminhada` | `photo-1693891320020-366cb3c9e6d7` | Pessoa caminhando confiante na cidade (REALIZAÇÃO) |
+
+> Substitutos futuros (qualidade > Unsplash): ensaio fotográfico BR dedicado ou geração IA (fal.ai) com brand-refs. Slots de DOR usam fotos de estresse genérico — trocar por cenas mais específicas BR fortalece a conversão.
+
+## Slots originais (briefing — descrição-alvo)
 
 | slotId | Página | Tom | Descrição |
 |---|---|---|---|
